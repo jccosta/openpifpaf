@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -57,7 +58,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Prediction" href="predict_cli.html" />
+    <link rel="next" title="CLI --help" href="cli_help.html" />
     <link rel="prev" title="Datasets" href="datasets.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -100,30 +101,10 @@
   Getting Started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Training
-  </a>
- </li>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
   </a>
  </li>
  <li class="toctree-l1">
@@ -139,18 +120,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Custom Models
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Training
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
+  <a class="reference internal" href="cli_help.html">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -168,6 +159,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
    Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
   </a>
  </li>
 </ul>
@@ -349,8 +357,7 @@
         
               <div>
                 
-  <p><a class="reference external" href="https://www.svenkreiss.com/">Sven Kreiss</a>, 2020</p>
-<div class="section" id="training">
+  <div class="section" id="training">
 <h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
 <p>This section introduces training to create your own models. You don’t need to do this step
 if you use pre-trained models for <a class="reference internal" href="predict_cli.html"><span class="doc">Prediction</span></a> on your own images.
@@ -556,20 +563,16 @@ srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">Datasets</a>
-    <a class='right-next' id="next-link" href="predict_cli.html" title="next page">Prediction</a>
+    <a class='right-next' id="next-link" href="cli_help.html" title="next page">CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code></a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By Sven Kreiss<br/>
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and contributors<br/>
         
-          <div class="extra_footer">
-            &copy; Copyright 2020.
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
-
-          </div>
+            &copy; Copyright 2020-2021.<br/>
       </p>
     </div>
   </footer>

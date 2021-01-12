@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -58,7 +59,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="FAQ" href="faq.html" />
-    <link rel="prev" title="CLI --help" href="cli_help.html" />
+    <link rel="prev" title="Prediction" href="predict_cli.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -102,28 +103,8 @@
 </p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="train.html">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -139,18 +120,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Custom Models
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
+  <a class="reference internal" href="datasets.html">
+   Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli_help.html">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -168,6 +159,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
    Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
   </a>
  </li>
 </ul>
@@ -323,7 +331,7 @@ For more accurate results, try <code class="docutils literal notranslate"><span 
   return torch._C._cuda_getDeviceCount() &gt; 0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:27 annotations: [14, 14, 17, 17, 14, 16, 12, 12, 9, 13, 9, 13, 8, 11, 13, 11, 11, 12, 8, 11, 8, 11, 8, 7, 8, 3, 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:28 annotations: [14, 14, 14, 16, 12, 13, 11, 9, 10, 12, 8, 12, 11, 12, 6, 8, 6, 7, 6, 7, 6, 4, 3, 4, 3, 3, 3, 2]
 INFO:__main__:batch 0: coco/000000188465.jpg
 </pre></div>
 </div>
@@ -342,7 +350,7 @@ Image credit: <a class="reference external" href="https://www.flickr.com/photos/
   return torch._C._cuda_getDeviceCount() &gt; 0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:12 annotations: [14, 9, 6, 5, 3, 4, 5, 3, 4, 4, 4, 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:11 annotations: [14, 7, 3, 3, 4, 4, 3, 4, 3, 3, 2]
 INFO:__main__:batch 0: coco/000000114907.jpg
 </pre></div>
 </div>
@@ -361,7 +369,7 @@ Image credit: <a class="reference external" href="https://www.flickr.com/photos/
   return torch._C._cuda_getDeviceCount() &gt; 0
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 13, 10, 3, 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 10, 10, 3, 2]
 INFO:__main__:batch 0: coco/000000147740.jpg
 </pre></div>
 </div>
@@ -418,9 +426,11 @@ DEBUG:openpifpaf.transforms.pad:pad with (7, 0, 8, 0)
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  7.   0. 369. 320.], image size = (385, 321)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.263s
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7ff080246250&gt;
-DEBUG:openpifpaf.decoder.multi:task 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.289s
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f8c09dbcf50&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.multi:task 0
 DEBUG:openpifpaf.decoder.cifcaf:initial annotations = 0
 DEBUG:openpifpaf.visualizer.cif:left_shoulder
 </pre></div>
@@ -435,9 +445,7 @@ DEBUG:openpifpaf.visualizer.cif:left_shoulder
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.caf:left_shoulder,left_hip
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0003.jpeg
+DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0003.jpeg
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.caf:left_shoulder,left_hip
@@ -446,7 +454,7 @@ DEBUG:openpifpaf.visualizer.cif:left_shoulder
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0004.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.003s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.004s
 DEBUG:openpifpaf.visualizer.cifhr:5 (field name: unknown)
 </pre></div>
 </div>
@@ -454,18 +462,18 @@ DEBUG:openpifpaf.visualizer.cifhr:5 (field name: unknown)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 904, 0.002s (C++ 0.000s)
-DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1439, 1523) in 0.003s
+DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1205, 1228) in 0.003s
 DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 161, 193), min_scale = 2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0006.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 2.059s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 2.163s
 DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 137, 164), min_scale = 2
 DEBUG:openpifpaf.decoder.utils.nms:nms = 0.003s
 INFO:openpifpaf.decoder.cifcaf:5 annotations: [17, 17, 17, 14, 7]
-DEBUG:openpifpaf.decoder.decoder:time: nn = 0.265s, dec = 2.064s
+DEBUG:openpifpaf.decoder.decoder:time: nn = 0.289s, dec = 2.169s
 INFO:__main__:batch 0: coco/000000541055_cropped.jpeg
 DEBUG:__main__:image output = coco/000000541055_cropped.jpeg.predictions.jpeg
 </pre></div>
@@ -513,7 +521,7 @@ Image credit: <a class="reference external" href="https://www.flickr.com/photos/
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="cli_help.html" title="previous page">CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code></a>
+    <a class='left-prev' id="prev-link" href="predict_cli.html" title="previous page">Prediction</a>
     <a class='right-next' id="next-link" href="faq.html" title="next page">FAQ</a>
 
     </div>
@@ -521,13 +529,9 @@ Image credit: <a class="reference external" href="https://www.flickr.com/photos/
     <div class="container">
       <p>
         
-          By Sven Kreiss<br/>
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and contributors<br/>
         
-          <div class="extra_footer">
-            &copy; Copyright 2020.
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
-
-          </div>
+            &copy; Copyright 2020-2021.<br/>
       </p>
     </div>
   </footer>

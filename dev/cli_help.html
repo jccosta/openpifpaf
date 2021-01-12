@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -57,8 +58,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Examples" href="examples.html" />
-    <link rel="prev" title="Prediction" href="predict_cli.html" />
+    <link rel="next" title="Overview" href="plugins_overview.html" />
+    <link rel="prev" title="Training" href="train.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -100,30 +101,10 @@
   Getting Started
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="train.html">
-   Training
-  </a>
- </li>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
   </a>
  </li>
  <li class="toctree-l1">
@@ -139,18 +120,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Custom Models
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
+  <a class="reference internal" href="datasets.html">
+   Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -168,6 +159,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
    Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
   </a>
  </li>
 </ul>
@@ -339,8 +347,7 @@
         
               <div>
                 
-  <p><a class="reference external" href="https://www.svenkreiss.com/">Sven Kreiss</a>, 2020</p>
-<div class="section" id="cli-help">
+  <div class="section" id="cli-help">
 <h1>CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code><a class="headerlink" href="#cli-help" title="Permalink to this headline">¶</a></h1>
 <p>This is a reference for all the <code class="docutils literal notranslate"><span class="pre">--help</span></code> message from all of OpenPifPaf’s command line interfaces (CLIs).</p>
 <div class="section" id="predict">
@@ -381,7 +388,7 @@ optional arguments:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
+                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -397,7 +404,7 @@ decoder configuration:
 
 CifCaf decoders:
   --cif-th CIF_TH       cif threshold (default: 0.1)
-  --caf-th CAF_TH       caf threshold (default: 0.1)
+  --caf-th CAF_TH       caf threshold (default: 0.2)
 
 CifCaf decoder:
   --force-complete-pose
@@ -430,10 +437,6 @@ MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -448,6 +451,10 @@ shufflenetv2k:
   --shufflenetv2k-conv5-as-stage
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -603,10 +610,6 @@ MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -621,6 +624,10 @@ shufflenetv2k:
   --shufflenetv2k-conv5-as-stage
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -662,7 +669,7 @@ network configuration:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
+                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -678,7 +685,7 @@ decoder configuration:
 
 CifCaf decoders:
   --cif-th CIF_TH       cif threshold (default: 0.1)
-  --caf-th CAF_TH       caf threshold (default: 0.1)
+  --caf-th CAF_TH       caf threshold (default: 0.2)
 
 CifCaf decoder:
   --force-complete-pose
@@ -791,10 +798,6 @@ MobileNetV2:
   --mobilenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -809,6 +812,10 @@ shufflenetv2k:
   --shufflenetv2k-conv5-as-stage
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -865,15 +872,17 @@ Composite Loss:
   --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
 
 Bce Loss:
-  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
-
-Bce Loss:
   --background-weight BACKGROUND_WEIGHT
                         BCE weight where ground truth is background (default:
                         1.0)
+  --focal-alpha FOCAL_ALPHA
+                        scale parameter of focal loss (default: 0.5)
   --focal-gamma FOCAL_GAMMA
                         when &gt; 0.0, use focal loss with the given gamma
                         (default: 1.0)
+
+Bce Loss:
+  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -981,6 +990,7 @@ data module CocoKp:
   --cocokp-val-image-dir COCOKP_VAL_IMAGE_DIR
   --cocokp-square-edge COCOKP_SQUARE_EDGE
                         square edge of input images (default: 385)
+  --cocokp-with-dense   train with dense connections (default: False)
   --cocokp-extended-scale
                         augment with an extended scale range (default: False)
   --cocokp-orientation-invariant COCOKP_ORIENTATION_INVARIANT
@@ -1128,6 +1138,7 @@ data module CocoKp:
   --cocokp-val-image-dir COCOKP_VAL_IMAGE_DIR
   --cocokp-square-edge COCOKP_SQUARE_EDGE
                         square edge of input images (default: 385)
+  --cocokp-with-dense   train with dense connections (default: False)
   --cocokp-extended-scale
                         augment with an extended scale range (default: False)
   --cocokp-orientation-invariant COCOKP_ORIENTATION_INVARIANT
@@ -1171,7 +1182,7 @@ decoder configuration:
 
 CifCaf decoders:
   --cif-th CIF_TH       cif threshold (default: 0.1)
-  --caf-th CAF_TH       caf threshold (default: 0.1)
+  --caf-th CAF_TH       caf threshold (default: 0.2)
 
 CifCaf decoder:
   --force-complete-pose
@@ -1200,10 +1211,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1218,6 +1225,10 @@ shufflenetv2k:
   --shufflenetv2k-conv5-as-stage
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -1530,21 +1541,17 @@ show:
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="predict_cli.html" title="previous page">Prediction</a>
-    <a class='right-next' id="next-link" href="examples.html" title="next page">Examples</a>
+    <a class='left-prev' id="prev-link" href="train.html" title="previous page">Training</a>
+    <a class='right-next' id="next-link" href="plugins_overview.html" title="next page">Overview</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By Sven Kreiss<br/>
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and contributors<br/>
         
-          <div class="extra_footer">
-            &copy; Copyright 2020.
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
-
-          </div>
+            &copy; Copyright 2020-2021.<br/>
       </p>
     </div>
   </footer>

@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -58,7 +59,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Modules" href="moduledocs.html" />
-    <link rel="prev" title="FAQ" href="faq.html" />
+    <link rel="prev" title="Cifar10" href="plugins_cifar10.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -102,28 +103,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="train.html">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
   </a>
  </li>
  <li class="toctree-l1">
@@ -139,18 +120,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Custom Models
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Prediction API
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli_help.html">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -168,6 +159,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
    Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
   </a>
  </li>
 </ul>
@@ -329,8 +337,7 @@
         
               <div>
                 
-  <p><a class="reference external" href="https://www.svenkreiss.com/">Sven Kreiss</a>, 2019</p>
-<div class="section" id="prediction-api">
+  <div class="section" id="prediction-api">
 <h1>Prediction API<a class="headerlink" href="#prediction-api" title="Permalink to this headline">¶</a></h1>
 <p>Programmatically use OpenPifPaf to run multi-person pose estimation on an image.
 The API is for more advanced use cases. Please read <a class="reference internal" href="predict_cli.html"><span class="doc">Prediction</span></a> as well.</p>
@@ -355,7 +362,7 @@ The API is for more advanced use cases. Please read <a class="reference internal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.12b1+5.g9e17075
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.12b1+15.g1c91e78
 1.7.1
 </pre></div>
 </div>
@@ -591,7 +598,7 @@ This is also the basis for the seeds. Both are shown below.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="faq.html" title="previous page">FAQ</a>
+    <a class='left-prev' id="prev-link" href="plugins_cifar10.html" title="previous page">Cifar10</a>
     <a class='right-next' id="next-link" href="moduledocs.html" title="next page">Modules</a>
 
     </div>
@@ -599,13 +606,9 @@ This is also the basis for the seeds. Both are shown below.</p>
     <div class="container">
       <p>
         
-          By Sven Kreiss<br/>
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and contributors<br/>
         
-          <div class="extra_footer">
-            &copy; Copyright 2020.
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
-
-          </div>
+            &copy; Copyright 2020-2021.<br/>
       </p>
     </div>
   </footer>

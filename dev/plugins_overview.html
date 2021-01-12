@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -58,7 +59,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Cifar10" href="plugins_cifar10.html" />
-    <link rel="prev" title="Modules" href="moduledocs.html" />
+    <link rel="prev" title="CLI --help" href="cli_help.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -102,28 +103,8 @@
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="train.html">
-   Training
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="predict_cli.html">
    Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
   </a>
  </li>
  <li class="toctree-l1">
@@ -139,18 +120,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Custom Models
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
+  <a class="reference internal" href="datasets.html">
+   Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli_help.html">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -168,6 +159,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
    Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
   </a>
  </li>
 </ul>
@@ -467,16 +475,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mobilenetv2&#39;: &#39;https://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a5/mobilenetv2-201112-193315-cocokp-1728a9f5.pkl&#39;,
- &#39;resnet18&#39;: &lt;object at 0x7fd1e6e9fb50&gt;,
- &#39;resnet50&#39;: &#39;https://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/resnet50-201123-175351-cocokp-o10s-127f7fdf.pkl&#39;,
- &#39;resnet101&#39;: &lt;object at 0x7fd1e6e9fb50&gt;,
- &#39;resnet152&#39;: &lt;object at 0x7fd1e6e9fb50&gt;,
- &#39;shufflenetv2x1&#39;: &lt;object at 0x7fd1e6e9fb50&gt;,
- &#39;shufflenetv2x2&#39;: &lt;object at 0x7fd1e6e9fb50&gt;,
- &#39;shufflenetv2k16&#39;: &#39;https://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/shufflenetv2k16-201123-174947-cocokp-o10s-bdd04c8f.pkl&#39;,
- &#39;shufflenetv2k30&#39;: &#39;https://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/shufflenetv2k30-201123-174748-cocokp-o10s-bc89e3d5.pkl&#39;,
- &#39;shufflenetv2k44&#39;: &lt;object at 0x7fd1e6e9fb50&gt;}
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mobilenetv2&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a5/mobilenetv2-201112-193315-cocokp-1728a9f5.pkl&#39;,
+ &#39;resnet18&#39;: &lt;object at 0x7f19c17faa60&gt;,
+ &#39;resnet50&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/resnet50-201123-175351-cocokp-o10s-127f7fdf.pkl&#39;,
+ &#39;resnet101&#39;: &lt;object at 0x7f19c17faa60&gt;,
+ &#39;resnet152&#39;: &lt;object at 0x7f19c17faa60&gt;,
+ &#39;shufflenetv2x1&#39;: &lt;object at 0x7f19c17faa60&gt;,
+ &#39;shufflenetv2x2&#39;: &lt;object at 0x7f19c17faa60&gt;,
+ &#39;shufflenetv2k16&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/shufflenetv2k16-201123-174947-cocokp-o10s-bdd04c8f.pkl&#39;,
+ &#39;shufflenetv2k30&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/shufflenetv2k30-201123-174748-cocokp-o10s-bc89e3d5.pkl&#39;,
+ &#39;shufflenetv2k44&#39;: &lt;object at 0x7f19c17faa60&gt;}
 </pre></div>
 </div>
 </div>
@@ -596,7 +604,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="moduledocs.html" title="previous page">Modules</a>
+    <a class='left-prev' id="prev-link" href="cli_help.html" title="previous page">CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code></a>
     <a class='right-next' id="next-link" href="plugins_cifar10.html" title="next page">Cifar10</a>
 
     </div>
@@ -604,13 +612,9 @@
     <div class="container">
       <p>
         
-          By Sven Kreiss<br/>
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and contributors<br/>
         
-          <div class="extra_footer">
-            &copy; Copyright 2020.
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
-
-          </div>
+            &copy; Copyright 2020-2021.<br/>
       </p>
     </div>
   </footer>

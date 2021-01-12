@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -57,8 +58,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="CLI --help" href="cli_help.html" />
-    <link rel="prev" title="Training" href="train.html" />
+    <link rel="next" title="Examples" href="examples.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -101,29 +102,9 @@
  </span>
 </p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="train.html">
-   Training
-  </a>
- </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Prediction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
   </a>
  </li>
  <li class="toctree-l1">
@@ -139,18 +120,28 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Custom Models
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
+  <a class="reference internal" href="datasets.html">
+   Datasets
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="moduledocs.html">
-   Modules
+  <a class="reference internal" href="train.html">
+   Training
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cli_help.html">
+   CLI
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     --help
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -168,6 +159,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
    Cifar10
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  API
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="moduledocs.html">
+   Modules
   </a>
  </li>
 </ul>
@@ -309,8 +317,7 @@
         
               <div>
                 
-  <p><a class="reference external" href="https://www.svenkreiss.com/">Sven Kreiss</a>, 2020</p>
-<div class="section" id="prediction">
+  <div class="section" id="prediction">
 <h1>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h1>
 <p>Use OpenPifPaf from the command line to run multi-person pose estimation on images.
 For programmatic predictions, please refer to <a class="reference internal" href="predict_api.html"><span class="doc">Prediction API</span></a>.
@@ -337,30 +344,34 @@ DEBUG:openpifpaf.show.painters:color connections = True, lw = 2, marker = 6
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
 DEBUG:openpifpaf.decoder.factory:created 1 decoders
 DEBUG:openpifpaf.show.painters:color connections = False, lw = 6, marker = 3
-DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.transforms.pad:valid area before pad: [  0.   0. 639. 426.], image size = (640, 427)
 DEBUG:openpifpaf.transforms.pad:pad with (0, 3, 1, 3)
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  0.   3. 639. 426.], image size = (641, 433)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.570s
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f5457672290&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.627s
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7fde722f9c10&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
-DEBUG:openpifpaf.decoder.cifcaf:initial annotations = 0
-DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.008s
-DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 669, 0.002s (C++ 0.000s)
-DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1422, 1344) in 0.003s
-DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 217, 321), min_scale = 2
-DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 0.022s
-DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 195, 284), min_scale = 2
-DEBUG:openpifpaf.decoder.utils.nms:nms = 0.003s
-INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 16, 14, 14, 14]
-DEBUG:openpifpaf.decoder.decoder:time: nn = 0.570s, dec = 0.028s
-INFO:__main__:batch 0: coco/000000081988.jpg
-DEBUG:__main__:json output = coco/000000081988.jpg.predictions.json
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:__main__:image output = coco/000000081988.jpg.predictions.png
-DEBUG:openpifpaf.show.canvas:writing image to coco/000000081988.jpg.predictions.png
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:initial annotations = 0
+DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.008s
+DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 669, 0.002s (C++ 0.000s)
+DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1017, 967) in 0.003s
+DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 217, 321), min_scale = 2
+DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 0.023s
+DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 195, 284), min_scale = 2
+DEBUG:openpifpaf.decoder.utils.nms:nms = 0.003s
+INFO:openpifpaf.decoder.cifcaf:5 annotations: [13, 15, 14, 12, 14]
+DEBUG:openpifpaf.decoder.decoder:time: nn = 0.627s, dec = 0.030s
+INFO:__main__:batch 0: coco/000000081988.jpg
+DEBUG:__main__:json output = coco/000000081988.jpg.predictions.json
+DEBUG:__main__:image output = coco/000000081988.jpg.predictions.png
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco/000000081988.jpg.predictions.png
 </pre></div>
 </div>
 </div>
@@ -500,9 +511,9 @@ In rare cases, joints can be localized outside the field of view and then the pi
             97.23,
             377.19,
             0.46,
-            109.67,
-            378.74,
-            0.36
+            0.0,
+            -3.0,
+            0.0
         ],
         &quot;bbox&quot;: [
             46.46,
@@ -510,7 +521,7 @@ In rare cases, joints can be localized outside the field of view and then the pi
             112.35,
             81.05
         ],
-        &quot;score&quot;: 0.691,
+        &quot;score&quot;: 0.676,
         &quot;category_id&quot;: 1
     },
     {
@@ -581,9 +592,9 @@ In rare cases, joints can be localized outside the field of view and then the pi
             238.76,
             320.41,
             0.37,
-            239.82,
-            316.23,
-            0.26,
+            0.0,
+            -3.0,
+            0.0,
             235.27,
             318.06,
             0.41,
@@ -626,17 +637,17 @@ In rare cases, joints can be localized outside the field of view and then the pi
             0.0,
             -3.0,
             0.0,
-            194.56,
-            373.97,
-            0.23
+            0.0,
+            -3.0,
+            0.0
         ],
         &quot;bbox&quot;: [
-            188.99,
+            190.54,
             312.97,
-            56.34,
+            54.79,
             68.11
         ],
-        &quot;score&quot;: 0.455,
+        &quot;score&quot;: 0.434,
         &quot;category_id&quot;: 1
     },
     {
@@ -755,21 +766,17 @@ The full list of arguments is available with <code class="docutils literal notra
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="train.html" title="previous page">Training</a>
-    <a class='right-next' id="next-link" href="cli_help.html" title="next page">CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code></a>
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="examples.html" title="next page">Examples</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
       <p>
         
-          By Sven Kreiss<br/>
+          By <a href="https://www.svenkreiss.com">Sven Kreiss</a> and contributors<br/>
         
-          <div class="extra_footer">
-            &copy; Copyright 2020.
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a> Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA</a>.
-
-          </div>
+            &copy; Copyright 2020-2021.<br/>
       </p>
     </div>
   </footer>
