@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Overview &#8212; OpenPifPaf Guide DEV</title>
+    <title>Plugins &#8212; OpenPifPaf Guide DEV</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -58,8 +58,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Cifar10" href="plugins_cifar10.html" />
-    <link rel="prev" title="CLI --help" href="cli_help.html" />
+    <link rel="next" title="Plugin: Cifar10" href="plugins_cifar10.html" />
+    <link rel="prev" title="Command Line" href="cli_help.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -112,18 +112,23 @@
    Examples
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
-   FAQ
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Custom Models
+  Chapters
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="models.html">
+   Models
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="datasets.html">
    Datasets
@@ -136,43 +141,31 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
+   Command Line
   </a>
  </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Plugins
- </span>
-</p>
-<ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Overview
+   Plugins
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
-   Cifar10
+   Plugin: Cifar10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQ
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Reference
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="moduledocs.html">
    Modules
@@ -311,11 +304,6 @@
    Headmeta
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coordinate-system">
-   Coordinate System
-  </a>
- </li>
 </ul>
 
         </nav>
@@ -335,8 +323,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plugins">
+<h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>Plugins are Python modules that extend the functionality of OpenPifPaf. Plugins are developed independently of OpenPifPaf (i.e. you don’t need to clone and modify OpenPifPaf’s core code).</p>
 <p>This is an overview of OpenPifPaf’s main components and which are extendible with plugins:
 <img alt="plugin overview" src="_images/plugins_overview.png" /></p>
@@ -476,15 +464,15 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mobilenetv2&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a5/mobilenetv2-201112-193315-cocokp-1728a9f5.pkl&#39;,
- &#39;resnet18&#39;: &lt;object at 0x7f20a1722a60&gt;,
+ &#39;resnet18&#39;: &lt;object at 0x7fed74025a60&gt;,
  &#39;resnet50&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/resnet50-201123-175351-cocokp-o10s-127f7fdf.pkl&#39;,
- &#39;resnet101&#39;: &lt;object at 0x7f20a1722a60&gt;,
- &#39;resnet152&#39;: &lt;object at 0x7f20a1722a60&gt;,
- &#39;shufflenetv2x1&#39;: &lt;object at 0x7f20a1722a60&gt;,
- &#39;shufflenetv2x2&#39;: &lt;object at 0x7f20a1722a60&gt;,
+ &#39;resnet101&#39;: &lt;object at 0x7fed74025a60&gt;,
+ &#39;resnet152&#39;: &lt;object at 0x7fed74025a60&gt;,
+ &#39;shufflenetv2x1&#39;: &lt;object at 0x7fed74025a60&gt;,
+ &#39;shufflenetv2x2&#39;: &lt;object at 0x7fed74025a60&gt;,
  &#39;shufflenetv2k16&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/shufflenetv2k16-201123-174947-cocokp-o10s-bdd04c8f.pkl&#39;,
  &#39;shufflenetv2k30&#39;: &#39;http://github.com/vita-epfl/openpifpaf-torchhub/releases/download/v0.12a7/shufflenetv2k30-201123-174748-cocokp-o10s-bc89e3d5.pkl&#39;,
- &#39;shufflenetv2k44&#39;: &lt;object at 0x7f20a1722a60&gt;}
+ &#39;shufflenetv2k44&#39;: &lt;object at 0x7fed74025a60&gt;}
 </pre></div>
 </div>
 </div>
@@ -568,12 +556,6 @@
 <p>Similarly, the decoder will look for heads that are of type <code class="docutils literal notranslate"><span class="pre">headmeta.Cif</span></code> and <code class="docutils literal notranslate"><span class="pre">headmeta.Caf</span></code> to instantiate the CifCaf decoder.</p>
 <p>To get started, have a look how the head metas are created in <code class="docutils literal notranslate"><span class="pre">CocoKp</span></code> for new pose datasets and in <code class="docutils literal notranslate"><span class="pre">CocoDet</span></code> for new detection datasets.</p>
 </div>
-<div class="section" id="coordinate-system">
-<span id="id1"></span><h2>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h2>
-<p>When adding your own datasets or transformations, it is good to keep in mind the coordinate system that OpenPifPaf assumes. The short summary is, everything is done in such a way that annotation coordinates only need to be multiplied by the image rescaling factor without offset. Therefore, the (0, 0) feature map needs to be aligned with the (0, 0) pixel.</p>
-<p><img alt="coordinate system" src="_images/coordinate_system.png" /></p>
-<p>This also shows that training image sizes must be a multiple of the network stride <em>plus one</em>, i.e., in the above image, an input image size of <span class="math notranslate nohighlight">\(5\times5\)</span> would be optimal for a feature map of size <span class="math notranslate nohighlight">\(2\times2\)</span> because the stride is 4.</p>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -604,8 +586,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="cli_help.html" title="previous page">CLI <code class="docutils literal notranslate"><span class="pre">--help</span></code></a>
-    <a class='right-next' id="next-link" href="plugins_cifar10.html" title="next page">Cifar10</a>
+    <a class='left-prev' id="prev-link" href="cli_help.html" title="previous page">Command Line</a>
+    <a class='right-next' id="next-link" href="plugins_cifar10.html" title="next page">Plugin: Cifar10</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

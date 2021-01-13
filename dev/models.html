@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ &#8212; OpenPifPaf Guide DEV</title>
+    <title>Models &#8212; OpenPifPaf Guide DEV</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -58,8 +58,8 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Modules" href="moduledocs.html" />
-    <link rel="prev" title="Plugin: Cifar10" href="plugins_cifar10.html" />
+    <link rel="next" title="Datasets" href="datasets.html" />
+    <link rel="prev" title="Prediction API" href="predict_api.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -124,8 +124,8 @@
    Prediction API
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="models.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Models
   </a>
  </li>
@@ -154,8 +154,8 @@
    Plugin: Cifar10
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
    FAQ
   </a>
  </li>
@@ -242,7 +242,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/faq.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/models.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -267,7 +267,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/vita-epfl/openpifpaf/dev?urlpath=tree/guide/faq.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/vita-epfl/openpifpaf/dev?urlpath=tree/guide/models.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -290,28 +290,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-evaluate-with-641px-instead-of-640px">
-   Why evaluate with 641px instead of 640px?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation-problem">
-   Installation Problem
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#matplotlib-backend">
-   Matplotlib Backend
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#predict-is-slow">
-   Predict is slow
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-h-or-gcc-is-missing">
-   Python.h or gcc is missing
+  <a class="reference internal nav-link" href="#coordinate-system">
+   Coordinate System
   </a>
  </li>
 </ul>
@@ -325,54 +305,23 @@
         
               <div>
                 
-  <div class="section" id="faq">
-<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
-<p>Frequently Asked Questions (FAQ).</p>
-<div class="section" id="why-evaluate-with-641px-instead-of-640px">
-<h2>Why evaluate with 641px instead of 640px?<a class="headerlink" href="#why-evaluate-with-641px-instead-of-640px" title="Permalink to this headline">¶</a></h2>
-<p>OpenPifPaf uses the standard convention of PyTorch models to pad convolutions.
-Let’s start with an example: a single layer of a 3x3 conv with stride 2 that is padded with 1. For an output feature map of size 2x2, the input must be of size 3x3. This generalization holds: the input must be of size <code class="docutils literal notranslate"><span class="pre">(nx</span> <span class="pre">*</span> <span class="pre">stride</span> <span class="pre">+</span> <span class="pre">1,</span> <span class="pre">ny</span> <span class="pre">*</span> <span class="pre">stride</span> <span class="pre">+</span> <span class="pre">1)</span></code>.
-The models that OpenPifPaf uses have an intermediate layer with stride 16. Therefore, good input image sizes are multiples of 16 plus 1.</p>
-<p>It is usually not a problem if the input size is not perfect. There will just be a small margin on the right side and bottom of the image that is not “covered” by a feature map cell.</p>
-<p>For more info, see the section on <a class="reference internal" href="models.html#coordinate-system"><span class="std std-ref">Coordinate System</span></a>.</p>
-</div>
-<div class="section" id="installation-problem">
-<h2>Installation Problem<a class="headerlink" href="#installation-problem" title="Permalink to this headline">¶</a></h2>
-<p>This project uses continuous integration testing (CI). That means that a set of unit and integration tests is run on multiple versions of Linux, on MacOSX and on Windows for every code change. The result of these tests is here:
-<a class="reference external" href="https://travis-ci.org/github/vita-epfl/openpifpaf/branches">TravisCI</a> –&gt; click on the latest test for the master branch to see something like this:
-<img alt="travis tests" src="_images/travistests.png" />
-You can click on a “build job” to see its terminal output. The terminal output shows all steps from cloning the repository, installing PyTorch, installing OpenPifPaf to running linting and the actual tests.</p>
-<p>If you think the list of platforms and Python versions is outdated and you want a particular combination be added to this list, please file a GitHub issue.</p>
-</div>
-<div class="section" id="matplotlib-backend">
-<h2>Matplotlib Backend<a class="headerlink" href="#matplotlib-backend" title="Permalink to this headline">¶</a></h2>
-<p>I avoid any plotting on my training servers. However, if you insist on creating plots on the server, you might run into constraints of certain matplotlib backends not being available. If you have a backend that you know is working for your setup, you can select it by prepending any command, for example: <code class="docutils literal notranslate"><span class="pre">MPLBACKEND=agg</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">openpifpaf.train</span> <span class="pre">...</span></code>. This would set the backend to <code class="docutils literal notranslate"><span class="pre">agg</span></code> but you can use something else. This works for all Python scripts that use matplotlib.</p>
-<p>For video on MacOSX, an interactive GUI is required that can update in real-time. I use the matplotlib backend that is called “macosx” like this: <code class="docutils literal notranslate"><span class="pre">MPLBACKEND=macosx</span> <span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">openpifpaf.video</span> <span class="pre">...</span></code>.</p>
-</div>
-<div class="section" id="predict-is-slow">
-<h2>Predict is slow<a class="headerlink" href="#predict-is-slow" title="Permalink to this headline">¶</a></h2>
-<p>Check whether your installation of PyTorch can access CUDA for GPU processing.
-If the output of the command below is False, then PyTorch cannot make use of your GPU and OpenPifPaf falls back to CPU processing.</p>
-<div class="cell docutils container">
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>python -c <span class="s2">&quot;import torch; print(torch.cuda.is_available())&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.7.9/x64/lib/python3.7/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /pytorch/c10/cuda/CUDAFunctions.cpp:100.)
-  return torch._C._cuda_getDeviceCount() &gt; 0
-False
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">openpifpaf</span>
+<span class="n">openpifpaf</span><span class="o">.</span><span class="n">plugin</span><span class="o">.</span><span class="n">register</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>You can also run <code class="docutils literal notranslate"><span class="pre">predict</span></code> with the <code class="docutils literal notranslate"><span class="pre">--debug</span></code> option. Compare your output with the output in <a class="reference internal" href="predict_cli.html"><span class="doc">Prediction</span></a> to understand which part of the process is slow for you. For a fair comparison, also use <code class="docutils literal notranslate"><span class="pre">--disable-cuda</span></code> because the reference in this documentation is created without CUDA.</p>
-</div>
-<div class="section" id="python-h-or-gcc-is-missing">
-<h2>Python.h or gcc is missing<a class="headerlink" href="#python-h-or-gcc-is-missing" title="Permalink to this headline">¶</a></h2>
-<p>On most systems, you should be able to use a binary wheel (a pre-built binary compilation) so that you don’t need to install from source.</p>
-<p>Source installation might fail with an exception complaining about a missing <code class="docutils literal notranslate"><span class="pre">Python.h</span></code> file or missing <code class="docutils literal notranslate"><span class="pre">gcc</span></code>. This means that you need the development files for Python itself and a C compiler. On Ubuntu systems, you can get this with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3-dev</span></code>. For more operating systems, there is a good <a class="reference external" href="https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory">StackOverflow post</a> on the topic.</p>
+<div class="section" id="models">
+<h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
+<p>TODO</p>
+<p>For now, see Method section in our publication.</p>
+<div class="section" id="coordinate-system">
+<span id="id1"></span><h2>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h2>
+<p>When adding your own datasets or transformations, it is good to keep in mind the coordinate system that OpenPifPaf assumes. The short summary is, everything is done in such a way that annotation coordinates only need to be multiplied by the image rescaling factor without offset. Therefore, the (0, 0) feature map needs to be aligned with the (0, 0) pixel.</p>
+<p><img alt="coordinate system" src="_images/coordinate_system.png" /></p>
+<p>This also shows that training image sizes must be a multiple of the network stride <em>plus one</em>, i.e., in the above image, an input image size of <span class="math notranslate nohighlight">\(5\times5\)</span> would be optimal for a feature map of size <span class="math notranslate nohighlight">\(2\times2\)</span> because the stride is 4.</p>
 </div>
 </div>
 
@@ -404,8 +353,8 @@ False
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="plugins_cifar10.html" title="previous page">Plugin: Cifar10</a>
-    <a class='right-next' id="next-link" href="moduledocs.html" title="next page">Modules</a>
+    <a class='left-prev' id="prev-link" href="predict_api.html" title="previous page">Prediction API</a>
+    <a class='right-next' id="next-link" href="datasets.html" title="next page">Datasets</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -58,7 +58,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="next" title="Prediction API" href="predict_api.html" />
     <link rel="prev" title="Prediction" href="predict_cli.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -112,18 +112,23 @@
    Examples
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="faq.html">
-   FAQ
-  </a>
- </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Custom Models
+  Chapters
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="predict_api.html">
+   Prediction API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="models.html">
+   Models
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="datasets.html">
    Datasets
@@ -136,43 +141,31 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="cli_help.html">
-   CLI
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     --help
-    </span>
-   </code>
+   Command Line
   </a>
  </li>
-</ul>
-<p class="caption collapsible-parent">
- <span class="caption-text">
-  Plugins
- </span>
-</p>
-<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_overview.html">
-   Overview
+   Plugins
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="plugins_cifar10.html">
-   Cifar10
+   Plugin: Cifar10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="faq.html">
+   FAQ
   </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  API
+  Reference
  </span>
 </p>
 <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="predict_api.html">
-   Prediction API
-  </a>
- </li>
  <li class="toctree-l1">
   <a class="reference internal" href="moduledocs.html">
    Modules
@@ -424,8 +417,8 @@ DEBUG:openpifpaf.transforms.pad:pad with (7, 0, 8, 0)
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  7.   0. 369. 320.], image size = (385, 321)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.409s
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f162fae1e50&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.267s
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f877bd8fed0&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
 DEBUG:openpifpaf.decoder.cifcaf:initial annotations = 0
 DEBUG:openpifpaf.visualizer.cif:left_shoulder
@@ -452,28 +445,24 @@ DEBUG:openpifpaf.visualizer.cif:left_shoulder
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0004.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.004s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.003s
 DEBUG:openpifpaf.visualizer.cifhr:5 (field name: unknown)
+DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0005.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0005.jpeg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 904, 0.002s (C++ 0.001s)
-DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1205, 1228) in 0.004s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 904, 0.002s (C++ 0.000s)
+DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1205, 1228) in 0.003s
 DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 161, 193), min_scale = 2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0006.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 2.434s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 2.029s
 DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 137, 164), min_scale = 2
 DEBUG:openpifpaf.decoder.utils.nms:nms = 0.003s
 INFO:openpifpaf.decoder.cifcaf:5 annotations: [17, 17, 17, 14, 7]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:time: nn = 0.410s, dec = 2.441s
+DEBUG:openpifpaf.decoder.decoder:time: nn = 0.268s, dec = 2.034s
 INFO:__main__:batch 0: coco/000000541055_cropped.jpeg
 DEBUG:__main__:image output = coco/000000541055_cropped.jpeg.predictions.jpeg
 </pre></div>
@@ -522,7 +511,7 @@ Image credit: <a class="reference external" href="https://www.flickr.com/photos/
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="predict_cli.html" title="previous page">Prediction</a>
-    <a class='right-next' id="next-link" href="faq.html" title="next page">FAQ</a>
+    <a class='right-next' id="next-link" href="predict_api.html" title="next page">Prediction API</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
