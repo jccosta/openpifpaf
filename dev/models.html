@@ -290,6 +290,16 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#base-networks">
+   Base Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pretrained-models">
+   Pretrained Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coordinate-system">
    Coordinate System
   </a>
@@ -316,7 +326,54 @@
 <div class="section" id="models">
 <h1>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h1>
 <p>TODO</p>
-<p>For now, see Method section in our publication.</p>
+<p>For now, see Method section in our publication for an architecture overview.</p>
+<div class="section" id="base-networks">
+<h2>Base Networks<a class="headerlink" href="#base-networks" title="Permalink to this headline">¶</a></h2>
+<p>The following types of base networks have implementations and can be used with the <code class="docutils literal notranslate"><span class="pre">--basenet</span></code> command line argument for training. Not all base networks are well optimized and you can consult the <a class="reference internal" href="intro.html#introduction"><span class="std std-ref">Introduction</span></a> for benchmark results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">openpifpaf</span><span class="o">.</span><span class="n">BASE_FACTORIES</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobilenetv2&#39;,
+ &#39;resnet18&#39;,
+ &#39;resnet50&#39;,
+ &#39;resnet101&#39;,
+ &#39;resnet152&#39;,
+ &#39;resnext50&#39;,
+ &#39;resnext101&#39;,
+ &#39;shufflenetv2x1&#39;,
+ &#39;shufflenetv2x2&#39;,
+ &#39;shufflenetv2k16&#39;,
+ &#39;shufflenetv2k20&#39;,
+ &#39;shufflenetv2kx5&#39;,
+ &#39;shufflenetv2k30&#39;,
+ &#39;shufflenetv2k44&#39;,
+ &#39;squeezenet&#39;,
+ &#39;cifar10net&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pretrained-models">
+<h2>Pretrained Models<a class="headerlink" href="#pretrained-models" title="Permalink to this headline">¶</a></h2>
+<p>The current list of pretrained models is below and you can use them with the <code class="docutils literal notranslate"><span class="pre">--checkpoint</span></code> argument. Not all pretrained models are well optimized and you can consult the <a class="reference internal" href="intro.html#introduction"><span class="std std-ref">Introduction</span></a> for benchmark results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span><span class="p">,</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">openpifpaf</span><span class="o">.</span><span class="n">CHECKPOINT_URLS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="nb">str</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mobilenetv2&#39;, &#39;resnet50&#39;, &#39;shufflenetv2k16&#39;, &#39;shufflenetv2k30&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="coordinate-system">
 <span id="id1"></span><h2>Coordinate System<a class="headerlink" href="#coordinate-system" title="Permalink to this headline">¶</a></h2>
 <p>When adding your own datasets or transformations, it is good to keep in mind the coordinate system that OpenPifPaf assumes. The short summary is, everything is done in such a way that annotation coordinates only need to be multiplied by the image rescaling factor without offset. Therefore, the (0, 0) feature map needs to be aligned with the (0, 0) pixel.</p>
