@@ -669,8 +669,8 @@ DEBUG:openpifpaf.transforms.pad:pad with (7, 0, 8, 0)
 DEBUG:openpifpaf.transforms.pad:valid area after pad: [  7.   0. 369. 320.], image size = (385, 321)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.261s
-DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7f949066d750&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.decoder:nn processing time: 0.343s
+DEBUG:openpifpaf.decoder.decoder:parallel execution with worker &lt;openpifpaf.decoder.decoder.DummyPool object at 0x7fa56d4b7d90&gt;
 DEBUG:openpifpaf.decoder.multi:task 0
 DEBUG:openpifpaf.decoder.cifcaf:initial annotations = 0
 DEBUG:openpifpaf.visualizer.cif:left_shoulder
@@ -686,7 +686,9 @@ DEBUG:openpifpaf.visualizer.cif:left_shoulder
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.caf:left_shoulder,left_hip
-DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0003.jpeg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0003.jpeg
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.visualizer.caf:left_shoulder,left_hip
@@ -697,24 +699,22 @@ DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0003.jpeg
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_hr:target_intensities 0.003s
 DEBUG:openpifpaf.visualizer.cifhr:5 (field name: unknown)
+DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0005.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0005.jpeg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 904, 0.001s (C++ 0.000s)
-DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1205, 1228) in 0.003s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.utils.cif_seeds:seeds 904, 0.002s (C++ 0.000s)
+DEBUG:openpifpaf.decoder.utils.caf_scored:scored caf (1205, 1228) in 0.004s
 DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 161, 193), min_scale = 2
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.show.canvas:writing image to coco_debug_example/0006.jpeg
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 1.862s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEBUG:openpifpaf.decoder.cifcaf:annotations 5, 1.941s
 DEBUG:openpifpaf.decoder.utils.occupancy:shape = (17, 137, 164), min_scale = 2
-DEBUG:openpifpaf.decoder.utils.nms:nms = 0.002s
+DEBUG:openpifpaf.decoder.utils.nms:nms = 0.003s
 INFO:openpifpaf.decoder.cifcaf:5 annotations: [17, 17, 17, 14, 7]
-DEBUG:openpifpaf.decoder.decoder:time: nn = 0.261s, dec = 1.867s
+DEBUG:openpifpaf.decoder.decoder:time: nn = 0.343s, dec = 1.946s
 INFO:__main__:batch 0: coco/000000541055_cropped.jpeg
 DEBUG:__main__:image output = coco/000000541055_cropped.jpeg.predictions.jpeg
 </pre></div>
