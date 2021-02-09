@@ -868,10 +868,6 @@ losses:
 Composite Loss:
   --loss-prescale LOSS_PRESCALE
 
-Scale Loss:
-  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
-  --scale-log
-
 Bce Loss:
   --background-weight BACKGROUND_WEIGHT
                         BCE weight where ground truth is background (default:
@@ -886,6 +882,10 @@ Bce Loss:
 
 Bce Loss:
   --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
+
+Scale Loss:
+  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
+  --scale-log
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -949,10 +949,7 @@ learning rate scheduler:
   --lr-warm-up-factor LR_WARM_UP_FACTOR
                         learning pre-factor during warm-up (default: 0.001)
   --lr-warm-restarts LR_WARM_RESTARTS [LR_WARM_RESTARTS ...]
-          
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              list of epochs to do a warm restart (default: [])
+                        list of epochs to do a warm restart (default: [])
   --lr-warm-restart-duration LR_WARM_RESTART_DURATION
                         duration of a warm restart (default: 0.5)
 
