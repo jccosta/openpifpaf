@@ -388,7 +388,7 @@ optional arguments:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
+                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -485,7 +485,6 @@ network configuration:
                         &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
                         &quot;shufflenetv2k30&quot; (default: None)
   --basenet BASENET     base network, e.g. resnet50 (default: None)
-  --two-scale           [experimental] (default: False)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -656,7 +655,6 @@ network configuration:
                         &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
                         &quot;shufflenetv2k30&quot; (default: None)
   --basenet BASENET     base network, e.g. resnet50 (default: None)
-  --two-scale           [experimental] (default: False)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -842,7 +840,6 @@ network configuration:
                         &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
                         &quot;shufflenetv2k30&quot; (default: None)
   --basenet BASENET     base network, e.g. resnet50 (default: None)
-  --two-scale           [experimental] (default: False)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
@@ -868,6 +865,10 @@ losses:
 Composite Loss:
   --loss-prescale LOSS_PRESCALE
 
+Scale Loss:
+  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
+  --scale-log
+
 Bce Loss:
   --background-weight BACKGROUND_WEIGHT
                         BCE weight where ground truth is background (default:
@@ -882,10 +883,6 @@ Bce Loss:
 
 Bce Loss:
   --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
-
-Scale Loss:
-  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
-  --scale-log
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -1166,7 +1163,7 @@ data module CocoKp:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
+                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -1215,10 +1212,6 @@ ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1234,6 +1227,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -1263,7 +1260,6 @@ network configuration:
                         &quot;mobilenetv2&quot;, &quot;resnet50&quot;, &quot;shufflenetv2k16&quot;,
                         &quot;shufflenetv2k30&quot; (default: None)
   --basenet BASENET     base network, e.g. resnet50 (default: None)
-  --two-scale           [experimental] (default: False)
   --cross-talk CROSS_TALK
                         [experimental] (default: 0.0)
   --no-download-progress
