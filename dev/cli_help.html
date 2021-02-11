@@ -429,10 +429,6 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -448,6 +444,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -599,10 +599,6 @@ optional arguments:
   --rotate {left,right,180}
   --separate-debug-ax
 
-ShuffleNetv2:
-  --shufflenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -618,6 +614,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+ShuffleNetv2:
+  --shufflenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ResNet:
   --resnet-no-pretrain  use randomly initialized models (default: True)
@@ -851,7 +851,9 @@ network configuration:
 
 losses:
   --lambdas LAMBDAS [LAMBDAS ...]
-                        prefactor for head losses (default: None)
+                        prefactor for head losses by head (default: None)
+  --component-lambdas COMPONENT_LAMBDAS [COMPONENT_LAMBDAS ...]
+                        prefactor for head losses by component (default: None)
   --auto-tune-mtl       [experimental] use Kendall&#39;s prescription for
                         adjusting the multitask weight (default: False)
   --auto-tune-mtl-variance
