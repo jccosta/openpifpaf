@@ -800,21 +800,6 @@ logger:
   --debug               print debug messages (default: False)
   --log-stats           enable stats logging (default: False)
 
-ResNet:
-  --resnet-no-pretrain  use randomly initialized models (default: True)
-  --resnet-pool0-stride RESNET_POOL0_STRIDE
-                        stride of zero removes the pooling op (default: 0)
-  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
-                        stride of the input convolution (default: 2)
-  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
-                        stride of the optional 2nd input convolution (default:
-                        0)
-  --resnet-block5-dilation RESNET_BLOCK5_DILATION
-                        use dilated convs in block5 (default: 1)
-  --resnet-remove-last-block
-                        create a network without the last block (default:
-                        False)
-
 SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
@@ -842,6 +827,21 @@ shufflenetv2k:
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
                         use randomly initialized models (default: True)
+
+ResNet:
+  --resnet-no-pretrain  use randomly initialized models (default: True)
+  --resnet-pool0-stride RESNET_POOL0_STRIDE
+                        stride of zero removes the pooling op (default: 0)
+  --resnet-input-conv-stride RESNET_INPUT_CONV_STRIDE
+                        stride of the input convolution (default: 2)
+  --resnet-input-conv2-stride RESNET_INPUT_CONV2_STRIDE
+                        stride of the optional 2nd input convolution (default:
+                        0)
+  --resnet-block5-dilation RESNET_BLOCK5_DILATION
+                        use dilated convs in block5 (default: 1)
+  --resnet-remove-last-block
+                        create a network without the last block (default:
+                        False)
 
 CompositeField3:
   --cf3-dropout CF3_DROPOUT
@@ -883,6 +883,9 @@ Composite Loss:
   --regression-loss {smoothl1,l1,laplace}
                         type of regression loss (default: laplace)
 
+Bce Loss:
+  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
+
 Scale Loss:
   --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
   --scale-log
@@ -898,9 +901,6 @@ Bce Loss:
   --focal-detach
   --no-focal-clamp
   --bce-min BCE_MIN     gradient clipped below (default: 0.0)
-
-Bce Loss:
-  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -1506,10 +1506,7 @@ show:
   --monocolor-connections
   --line-width LINE_WIDTH
   --skeleton-solid-threshold SKELETON_SOLID_THRESHOLD
-  --
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>show-box
+  --show-box
   --white-overlay [WHITE_OVERLAY]
   --show-joint-scales
   --show-joint-confidences
