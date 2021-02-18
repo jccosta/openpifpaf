@@ -359,6 +359,11 @@
    Cloud and HPC
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distributeddataparallel">
+   DistributedDataParallel
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -514,7 +519,15 @@ srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available
   /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -u -m openpifpaf.train </span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%q &#39;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
-<p>Similarly, an <code class="docutils literal notranslate"><span class="pre">eval.sh</span></code> script might be run with <code class="docutils literal notranslate"><span class="pre">sbatch</span> <span class="pre">./eval.sh</span> <span class="pre">--watch</span> <span class="pre">--checkpoint</span> <span class="pre">&quot;outputs/shufflenetv2k16-201023-163830-cocokp.pkl.epoch??[0,5]&quot;</span> <span class="pre">--dataset=cocokp</span> <span class="pre">--skip-existing</span> <span class="pre">--loader-workers=2</span> <span class="pre">--force-complete-pose</span> <span class="pre">--seed-threshold=0.2</span></code> and look like this:</p>
+<p>Similarly, an <code class="docutils literal notranslate"><span class="pre">eval.sh</span></code> script might be run with</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sbatch ./eval.sh <span class="se">\</span>
+  --watch --checkpoint <span class="s2">&quot;outputs/shufflenetv2k16-201023-163830-cocokp.pkl.epoch??[0,5]&quot;</span> <span class="se">\</span>
+  --dataset<span class="o">=</span>cocokp <span class="se">\</span>
+  --loader-workers<span class="o">=</span><span class="m">2</span> <span class="se">\</span>
+  --force-complete-pose --seed-threshold<span class="o">=</span><span class="m">0</span>.2
+</pre></div>
+</div>
+<p>and look like this:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
 <span class="c1">#SBATCH --nodes 1</span>
 <span class="c1">#SBATCH --ntasks 1</span>
@@ -529,6 +542,28 @@ srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available
 
 srun singularity <span class="nb">exec</span> --bind &lt;make-host-dir-available&gt; --nv pytorch_latest.sif <span class="se">\</span>
   /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; python3 -m openpifpaf.eval </span><span class="k">$(</span><span class="nb">printf</span> <span class="s1">&#39;%q &#39;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="distributeddataparallel">
+<h2>DistributedDataParallel<a class="headerlink" href="#distributeddataparallel" title="Permalink to this headline">¶</a></h2>
+<p><em>Experimental</em>.</p>
+<p>With <code class="docutils literal notranslate"><span class="pre">torch.distributed.launch</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python -m torch.distributed.launch <span class="se">\</span>
+  -m openpifpaf.train --ddp <span class="se">\</span>
+  --all-other-args
+</pre></div>
+</div>
+<p>And on SLURM, the equivalent sbatch script is:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash -l</span>
+<span class="c1">#SBATCH --ntasks 4</span>
+<span class="c1">#SBATCH --cpus-per-task 20</span>
+<span class="c1">#SBATCH --mem 48G</span>
+<span class="c1">#SBATCH --time 72:00:00</span>
+<span class="c1">#SBATCH --gres gpu:1</span>
+
+srun singularity <span class="nb">exec</span> --bind /scratch/izar --nv pytorch_latest.sif <span class="se">\</span>
+  /bin/bash -c <span class="s2">&quot;source ./venv3/bin/activate &amp;&amp; MASTER_ADDR=</span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2"> MASTER_PORT=7142 python3 -u -m openpifpaf.train --ddp </span><span class="k">$(</span><span class="nb">printf</span> <span class="s2">&quot;%s &quot;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
