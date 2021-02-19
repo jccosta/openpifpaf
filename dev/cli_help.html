@@ -524,18 +524,31 @@ show:
   --show-file-extension SHOW_FILE_EXTENSION
                         default file extension (default: png)
   --textbox-alpha TEXTBOX_ALPHA
+                        transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
+                        annotation text color (default: white)
   --font-size FONT_SIZE
+                        annotation font size (default: 8)
   --monocolor-connections
+                        use a single color per instance (default: False)
   --line-width LINE_WIDTH
+                        skeleton line width (default: None)
   --skeleton-solid-threshold SKELETON_SOLID_THRESHOLD
-  --show-box
+                        set to 0.0 to draw all connections as solid lines
+                        (default: 0.5)
+  --show-box            show annotation bounding boxes (default: False)
   --white-overlay [WHITE_OVERLAY]
-  --show-joint-scales
+                        increase contrast to annotations by making image
+                        whiter (default: False)
+  --show-joint-scales   show boxes representing joint sizes (default: False)
   --show-joint-confidences
+                        print per-joint confidences on skeleton annotations
+                        (default: False)
   --show-decoding-order
   --show-frontier-order
   --show-only-decoded-connections
+                        to debug which connections were used for decoding
+                        (default: False)
   --video-fps VIDEO_FPS
                         output video frame rate (frames per second) (default:
                         10)
@@ -614,10 +627,6 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
-
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -633,6 +642,10 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
+
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -677,7 +690,7 @@ network configuration:
 
 decoder configuration:
   --decoder DECODER [DECODER ...]
-                        Decoders to be considered: [&#39;cifdet&#39;, &#39;cifcaf&#39;].
+                        Decoders to be considered: [&#39;cifcaf&#39;, &#39;cifdet&#39;].
                         (default: None)
   --seed-threshold SEED_THRESHOLD
                         minimum threshold for seeds (default: 0.5)
@@ -737,18 +750,31 @@ show:
   --show-file-extension SHOW_FILE_EXTENSION
                         default file extension (default: png)
   --textbox-alpha TEXTBOX_ALPHA
+                        transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
+                        annotation text color (default: white)
   --font-size FONT_SIZE
+                        annotation font size (default: 8)
   --monocolor-connections
+                        use a single color per instance (default: False)
   --line-width LINE_WIDTH
+                        skeleton line width (default: None)
   --skeleton-solid-threshold SKELETON_SOLID_THRESHOLD
-  --show-box
+                        set to 0.0 to draw all connections as solid lines
+                        (default: 0.5)
+  --show-box            show annotation bounding boxes (default: False)
   --white-overlay [WHITE_OVERLAY]
-  --show-joint-scales
+                        increase contrast to annotations by making image
+                        whiter (default: False)
+  --show-joint-scales   show boxes representing joint sizes (default: False)
   --show-joint-confidences
+                        print per-joint confidences on skeleton annotations
+                        (default: False)
   --show-decoding-order
   --show-frontier-order
   --show-only-decoded-connections
+                        to debug which connections were used for decoding
+                        (default: False)
   --video-fps VIDEO_FPS
                         output video frame rate (frames per second) (default:
                         10)
@@ -884,6 +910,13 @@ Composite Loss:
                         type of regression loss (default: laplace)
 
 Bce Loss:
+  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
+
+Scale Loss:
+  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
+  --scale-log
+
+Bce Loss:
   --background-weight BACKGROUND_WEIGHT
                         BCE weight where ground truth is background (default:
                         1.0)
@@ -894,13 +927,6 @@ Bce Loss:
   --focal-detach
   --no-focal-clamp
   --bce-min BCE_MIN     gradient clipped below (default: 0.0)
-
-Bce Loss:
-  --r-smooth R_SMOOTH   r_{smooth} for SmoothL1 regressions (default: 0.0)
-
-Scale Loss:
-  --b-scale B_SCALE     Laplace width b for scale loss (default: 1.0)
-  --scale-log
 
 trainer:
   --epochs EPOCHS       number of epochs to train (default: None)
@@ -1053,18 +1079,31 @@ show:
   --show-file-extension SHOW_FILE_EXTENSION
                         default file extension (default: png)
   --textbox-alpha TEXTBOX_ALPHA
+                        transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
+                        annotation text color (default: white)
   --font-size FONT_SIZE
+                        annotation font size (default: 8)
   --monocolor-connections
+                        use a single color per instance (default: False)
   --line-width LINE_WIDTH
+                        skeleton line width (default: None)
   --skeleton-solid-threshold SKELETON_SOLID_THRESHOLD
-  --show-box
+                        set to 0.0 to draw all connections as solid lines
+                        (default: 0.5)
+  --show-box            show annotation bounding boxes (default: False)
   --white-overlay [WHITE_OVERLAY]
-  --show-joint-scales
+                        increase contrast to annotations by making image
+                        whiter (default: False)
+  --show-joint-scales   show boxes representing joint sizes (default: False)
   --show-joint-confidences
+                        print per-joint confidences on skeleton annotations
+                        (default: False)
   --show-decoding-order
   --show-frontier-order
   --show-only-decoded-connections
+                        to debug which connections were used for decoding
+                        (default: False)
   --video-fps VIDEO_FPS
                         output video frame rate (frames per second) (default:
                         10)
@@ -1226,6 +1265,10 @@ SqueezeNet:
   --squeezenet-no-pretrain
                         use randomly initialized models (default: True)
 
+MobileNetV2:
+  --mobilenetv2-no-pretrain
+                        use randomly initialized models (default: True)
+
 shufflenetv2k:
   --shufflenetv2k-input-conv2-stride SHUFFLENETV2K_INPUT_CONV2_STRIDE
                         stride of the optional 2nd input convolution (default:
@@ -1241,10 +1284,6 @@ shufflenetv2k:
   --shufflenetv2k-instance-norm
   --shufflenetv2k-group-norm
   --shufflenetv2k-leaky-relu
-
-MobileNetV2:
-  --mobilenetv2-no-pretrain
-                        use randomly initialized models (default: True)
 
 ShuffleNetv2:
   --shufflenetv2-no-pretrain
@@ -1306,18 +1345,31 @@ show:
   --show-file-extension SHOW_FILE_EXTENSION
                         default file extension (default: png)
   --textbox-alpha TEXTBOX_ALPHA
+                        transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
+                        annotation text color (default: white)
   --font-size FONT_SIZE
+                        annotation font size (default: 8)
   --monocolor-connections
+                        use a single color per instance (default: False)
   --line-width LINE_WIDTH
+                        skeleton line width (default: None)
   --skeleton-solid-threshold SKELETON_SOLID_THRESHOLD
-  --show-box
+                        set to 0.0 to draw all connections as solid lines
+                        (default: 0.5)
+  --show-box            show annotation bounding boxes (default: False)
   --white-overlay [WHITE_OVERLAY]
-  --show-joint-scales
+                        increase contrast to annotations by making image
+                        whiter (default: False)
+  --show-joint-scales   show boxes representing joint sizes (default: False)
   --show-joint-confidences
+                        print per-joint confidences on skeleton annotations
+                        (default: False)
   --show-decoding-order
   --show-frontier-order
   --show-only-decoded-connections
+                        to debug which connections were used for decoding
+                        (default: False)
   --video-fps VIDEO_FPS
                         output video frame rate (frames per second) (default:
                         10)
@@ -1501,18 +1553,31 @@ show:
   --show-file-extension SHOW_FILE_EXTENSION
                         default file extension (default: png)
   --textbox-alpha TEXTBOX_ALPHA
+                        transparency of annotation text box (default: 0.5)
   --text-color TEXT_COLOR
+                        annotation text color (default: white)
   --font-size FONT_SIZE
+                        annotation font size (default: 8)
   --monocolor-connections
+                        use a single color per instance (default: False)
   --line-width LINE_WIDTH
+                        skeleton line width (default: None)
   --skeleton-solid-threshold SKELETON_SOLID_THRESHOLD
-  --show-box
+                        set to 0.0 to draw all connections as solid lines
+                        (default: 0.5)
+  --show-box            show annotation bounding boxes (default: False)
   --white-overlay [WHITE_OVERLAY]
-  --show-joint-scales
+                        increase contrast to annotations by making image
+                        whiter (default: False)
+  --show-joint-scales   show boxes representing joint sizes (default: False)
   --show-joint-confidences
+                        print per-joint confidences on skeleton annotations
+                        (default: False)
   --show-decoding-order
   --show-frontier-order
   --show-only-decoded-connections
+                        to debug which connections were used for decoding
+                        (default: False)
   --video-fps VIDEO_FPS
                         output video frame rate (frames per second) (default:
                         10)
